@@ -20,7 +20,7 @@ const bot = new Discord.Client();
 bot.on('message', (message) => {
 
     if(message.content.toUpperCase() === 'ping'.toUpperCase()) {
-        message.reply('pong Yoni')
+        message.reply('pong _' + message.author + '_')
     }
 });
 
