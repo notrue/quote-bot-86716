@@ -30,7 +30,7 @@ bot.on('message', (message) => {
             || upMsg === 'clear'.toUpperCase() 
             || upMsg === 'delete'.toUpperCase()) {
                 message.reply('Deleting... please wait');
-                client.deleteMessages(messages);
+                bot.deleteMessages(messages);
                 messages = [];
     }
 });
