@@ -31,6 +31,7 @@ bot.on('message', (message) => {
             || upMsg === '/delete'.toUpperCase()) {
                 message.reply('Deleting... please wait');
                 console.log('webhook: ' + message.webhookID + ', ' + !message.webhookID);
+                clear();
                 //if (message.webhookID != null 
                   //  && message.member.hasPermission("MANAGE_MESSAGES")) {
                     message.channel.fetchMessages()
@@ -41,5 +42,10 @@ bot.on('message', (message) => {
                 //messages = [];
     }
 });
+
+function clear() {
+    client.deleteMessages(messages);
+    messages = [];
+}
 
 bot.login("NDI0OTE1ODY1MzMxMzAyNDAw.DY_3Mg._kPh3apVAFt5J4qo4LsrFpMbzxA");
