@@ -31,7 +31,8 @@ bot.on('message', (message) => {
             || upMsg === '/delete'.toUpperCase()) {
                 message.reply('Deleting... please wait');
                 console.log('webhook: ' + message.webhookID + ', ' + !message.webhookID);
-                if (!message.webhookID && message.member.hasPermission("MANAGE_MESSAGES")) {
+                if (message.webhookID != null 
+                    && message.member.hasPermission("MANAGE_MESSAGES")) {
                     message.channel.fetchMessages()
                        .then(function(list){
                             message.channel.bulkDelete(list);
