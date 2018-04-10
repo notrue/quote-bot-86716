@@ -23,14 +23,16 @@ bot.on('message', (message) => {
     //store message
     messages.push(message);
     let upMsg = message.content.toUpperCase();
+    console.log(upMsg);
     if(upMsg === 'ping'.toUpperCase()) {
         message.reply('pong _' + message.author + '_')
     }
     else if(upMsg === 'del'.toUpperCase()
         || upMsg === 'clear'.toUpperCase()
         || upMsg === 'delete'.toUpperCase()) {
-        client.deleteMessages(messages);
-        messages = [];
+            message.reply('Deleting... please wait');
+            client.deleteMessages(messages);
+            messages = [];
     }
 });
 
