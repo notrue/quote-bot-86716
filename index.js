@@ -44,7 +44,7 @@ bot.on('message', (message) => {
 });
 
 function clear() {
-    Discord.deleteMessages(messages);
+    this.bot.deleteMessages(messages);
     messages = [];
 }
 
