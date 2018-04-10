@@ -17,10 +17,20 @@ server.listen(port); //the server object listens on port 8080
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+var messages = [];
 bot.on('message', (message) => {
 
-    if(message.content.toUpperCase() === 'ping'.toUpperCase()) {
+    //store message
+    messages.push(message);
+    let upMsg = message.content.toUpperCase();
+    if(upMsg === 'ping'.toUpperCase()) {
         message.reply('pong _' + message.author + '_')
+    }
+    else if(upMsg === 'del'.toUpperCase()
+        || upMsg === 'clear'.toUpperCase()
+        || upMsg === 'delete'.toUpperCase()) {
+        client.deleteMessages(messages);
+        messages = [];
     }
 });
 
