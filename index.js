@@ -26,12 +26,17 @@ bot.on('message', (message) => {
     console.log(upMsg);
     if(upMsg === 'ping'.toUpperCase()) {
         message.reply('pong _' + message.author + '_')
-    } else if(upMsg === 'del'.toUpperCase() 
-            || upMsg === 'clear'.toUpperCase() 
-            || upMsg === 'delete'.toUpperCase()) {
+    } else if(upMsg === '/del'.toUpperCase() 
+            || upMsg === '/clear'.toUpperCase() 
+            || upMsg === '/delete'.toUpperCase()) {
                 message.reply('Deleting... please wait');
-                bot.deleteMessages(messages);
-                messages = [];
+                if (message.member.hasPermission("MANAGE_MESSAGES")) {
+                    message.channel.fetchMessages()
+                       .then(function(list){
+                            message.channel.bulkDelete(list);
+                        }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
+                }
+                //messages = [];
     }
 });
 
