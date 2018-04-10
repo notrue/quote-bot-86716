@@ -29,7 +29,8 @@ bot.on('message', (message) => {
     } else if(upMsg === '/del'.toUpperCase() 
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
-                message.reply('Deleting... please wait' + message.member);
+                message.reply('Deleting... please wait');
+                console.log(message.member);
                 if (message.member.hasPermission("MANAGE_MESSAGES")) {
                     message.channel.fetchMessages()
                        .then(function(list){
