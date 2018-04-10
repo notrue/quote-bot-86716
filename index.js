@@ -29,8 +29,8 @@ bot.on('message', (message) => {
     } else if(upMsg === '/del'.toUpperCase() 
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
-                message.reply('Deleting... please wait');
-                if (message.author.hasPermission("MANAGE_MESSAGES")) {
+                message.reply('Deleting... please wait' + message.member);
+                if (message.member.hasPermission("MANAGE_MESSAGES")) {
                     message.channel.fetchMessages()
                        .then(function(list){
                             message.channel.bulkDelete(list);
