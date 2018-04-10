@@ -27,12 +27,14 @@ bot.on('message', (message) => {
     if(upMsg === 'ping'.toUpperCase()) {
         message.reply('pong _' + message.author + '_')
     }
-    else if(upMsg === 'del'.toUpperCase()
-        || upMsg === 'clear'.toUpperCase()
-        || upMsg === 'delete'.toUpperCase()) {
-            message.reply('Deleting... please wait');
-            client.deleteMessages(messages);
-            messages = [];
+    else {
+        if(upMsg === 'del'.toUpperCase() 
+            || upMsg === 'clear'.toUpperCase() 
+            || upMsg === 'delete'.toUpperCase()) {
+                message.reply('Deleting... please wait');
+                client.deleteMessages(messages);
+                messages = [];
+        }
     }
 });
 
