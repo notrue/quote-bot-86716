@@ -30,7 +30,7 @@ bot.on('message', (message) => {
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
                 message.reply('Deleting... please wait');
-                if (message.member.hasPermission("MANAGE_MESSAGES")) {
+                if (message.author.hasPermission("MANAGE_MESSAGES")) {
                     message.channel.fetchMessages()
                        .then(function(list){
                             message.channel.bulkDelete(list);
