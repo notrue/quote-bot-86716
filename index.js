@@ -30,7 +30,7 @@ bot.on('message', (message) => {
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
                 message.reply('Deleting... please wait');
-                console.log(message.member);
+                console.log(message.webhookID);
                 if (!message.webhookID && message.member.hasPermission("MANAGE_MESSAGES")) {
                     message.channel.fetchMessages()
                        .then(function(list){
