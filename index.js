@@ -46,6 +46,9 @@ bot.on('message', (message) => {
     }
 });
 
+bot.on('deleteMessages', (message) => {
+    console.log('deleteMessages')
+});    
 function clear() {
     console.log('client:' + bot.deleteMessages);
     bot.deleteMessages(messages, {});
