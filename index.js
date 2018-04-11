@@ -31,12 +31,12 @@ bot.on('message', (message) => {
             || upMsg === '/delete'.toUpperCase()) {
                 message.reply('Deleting... please wai');
                 console.log('webhook: ' + message.webhookID + ', ' + !message.webhookID);
-                clear();
+                //clear();
                 //if (message.webhookID != null 
                   //  && message.member.hasPermission("MANAGE_MESSAGES")) {
                       //console.log('bulk: ' + message.channel.bulkDelete + ', ' + bot.sweepMessages);
-                      let x = bot.sweepMessages(1);
-                      console.log('deleted!!! -> ' + x);
+                      //let x = bot.sweepMessages(1);
+                      //console.log('deleted!!! -> ' + x);
                     
                     if(message.webhookID) {
                         console.log('This is Webhook!!')
