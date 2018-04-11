@@ -47,11 +47,12 @@ bot.on('message', (message) => {
                     else {
                         console.log('This is direct chat! ! ! !')
                         message.channel.fetchMessages()
-                            .then(messages => {
+                            .then(messages1 => {
                                 //message.channel.bulkDelete(list);
-                                for(msg of messages) {
+                                console.log('messages1[0]: ' + messages1[0]);
+                                for(msg of messages1) {
                                     console.log('--->> your message: ' + msg);
-                                    msg.delete(3000);
+                                    msg.reply('new try').then(m => m.delete(3000));
                                 }
                                 //message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                             }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
