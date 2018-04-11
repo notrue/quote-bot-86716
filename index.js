@@ -69,8 +69,8 @@ bot.on('message', (message) => {
 
  
 function clear() {
-    console.log('client:' + bot.deleteMessages);
-    bot.sweepMessages(100);
+    console.log('client:' + this.bot.deleteMessages);
+    this.bot.sweepMessages(100);
     messages = [];
 }
 
