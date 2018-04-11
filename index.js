@@ -25,7 +25,7 @@ bot.on('message', (message) => {
     let upMsg = message.content.toUpperCase();
     console.log(upMsg);
     if(upMsg === 'ping'.toUpperCase()) {
-        message.reply('pong _' + message.author + '_')
+        message.reply(message.author + ' said \"' + message.content + '\", qUote-bot answered _\"pong\"_')
     } else if(upMsg === '/del'.toUpperCase() 
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
