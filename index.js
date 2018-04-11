@@ -38,9 +38,16 @@ bot.on('message', (message) => {
                       let x = bot.sweepMessages(1000);
                       console.log('deleted!!! -> ' + x);
                     
-                    /*works ONLY inside channel !!!! not direct chat*/message.channel.bulkDelete(3).then(() => {
-                        message.channel.send("Purged 3 messages.").then(m => m.delete(3000));
+
+                    message.channel.fetchMessages()
+                        .then((messages) => {
+                        /*works ONLY inside channel !!!! not direct chat*/message.channel.bulkDelete(messages.size).then(() => {
+                            message.channel.send("Purged 3 messages.").then(m => m.delete(3000));
+                        });
                     });
+
+
+
                     if(message.webhookID) {
                         console.log('This is Webhook!!')
                     }
