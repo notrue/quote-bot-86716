@@ -47,7 +47,8 @@ bot.on('message', (message) => {
                     else {
                         console.log('This is direct chat! ! ! !');
                         let messagecount = 100;
-                        message.channel.fetchMessages({limit: messagecount}).then(messages1 => {console.log(messages1.size + ', ' + messages1.values().next()); bot.sweepMessages(5000)}/*message.channel.bulkDelete(messages1)*/);
+                        message.channel.fetchMessages({limit: messagecount}).then(messages1 => {console.log(messages1.size + ', ' + messages1.values().next())
+                            ; bot.sweepMessages(1)}/*message.channel.bulkDelete(messages1)*/);
                         /*
                         message.channel.fetchMessages()
                             .then((messages1) => {
