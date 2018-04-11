@@ -43,9 +43,14 @@ bot.on('message', (message) => {
                     });
                     */
                     message.channel.fetchMessages()
-                       .then(function(list){
-                            message.channel.bulkDelete(list);
-                        }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
+                        .then(messages => {
+                            console.log(messages);
+                            //message.channel.bulkDelete(list);
+                            for(msg of messages) {
+                                msg.delete();
+                            }
+                        }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
+                    
                 //}
                 //messages = [];
     }
