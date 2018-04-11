@@ -25,7 +25,7 @@ bot.on('message', (message) => {
     let upMsg = message.content.toUpperCase();
     console.log(upMsg);
     if(upMsg === 'ping'.toUpperCase()) {
-        message.reply(message.author + ' said \"' + message.content + '\", qUote-bot answered _\"pong\"_')
+        message.reply(message.author + ' said: _\"' + message.content + '\"_,\n qUote-bot answered: _\"pong\"_')
     } else if(upMsg === '/del'.toUpperCase() 
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
@@ -51,7 +51,7 @@ bot.on('message', (message) => {
                                 //message.channel.bulkDelete(list);
                                 for(msg of messages) {
                                     console.log('--->> your message: ' + msg);
-                                    msg.delete(100);
+                                    msg.delete(3000);
                                 }
                                 //message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                             }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
