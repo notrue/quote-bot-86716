@@ -34,7 +34,7 @@ bot.on('message', (message) => {
                 //clear();
                 //if (message.webhookID != null 
                   //  && message.member.hasPermission("MANAGE_MESSAGES")) {
-                      console.log('bulk: ' + message.channel.bulkDelete + ', ' + message.channel.deleteMessages);
+                      console.log('bulk: ' + message.channel.bulkDelete + ', ' + bot.constructor);
                     message.channel.bulkDelete(100).then(() => {
                         message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                     });
