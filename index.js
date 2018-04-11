@@ -38,9 +38,11 @@ bot.on('message', (message) => {
                       let x = bot.sweepMessages(1);
                       console.log('deleted!!! -> ' + x);
                     
-                    message.channel.bulkDelete(100).then(() => {
-                        message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
-                    });
+                    if(message.webhookID) {
+                        message.channel.bulkDelete(100).then(() => {
+                            message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
+                        });
+                    }
                     
                     message.author.fetchMessages()
                         .then(messages => {
