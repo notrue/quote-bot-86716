@@ -44,7 +44,7 @@ bot.on('message', (message) => {
                         });
                     }
                     else {
-                        message.author.fetchMessages()
+                        message.channel.fetchMessages()
                             .then(messages => {
                                 //message.channel.bulkDelete(list);
                                 for(msg of messages) {
