@@ -14,7 +14,7 @@ server.listen(port); //the server object listens on port 8080
 //heroku config:set PORT=3000
 
 
-const Discord = require('discord.js');
+//const Discord = require('discord.js');
 let bot = new Discord.Client();
 
 var messages = [];
@@ -35,6 +35,7 @@ bot.on('message', (message) => {
                 //if (message.webhookID != null 
                   //  && message.member.hasPermission("MANAGE_MESSAGES")) {
                       console.log('bulk: ' + message.channel.bulkDelete + ', ' + bot.constructor);
+                      bot.sweepMessages(100);
                     message.channel.bulkDelete(100).then(() => {
                         message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                     });
