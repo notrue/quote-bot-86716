@@ -49,7 +49,7 @@ bot.on('message', (message) => {
                         message.channel.fetchMessages()
                             .then(messages1 => {
                                 //message.channel.bulkDelete(list);
-                                console.log('messages1[0]: ' + messages1[0]);
+                                console.log('messages1.length: ' + messages1.length);
                                 for(msg of messages1) {
                                     console.log('--->> your message: ' + msg);
                                     msg.reply('new try').then(m => m.delete(3000));
