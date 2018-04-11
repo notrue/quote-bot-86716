@@ -51,8 +51,8 @@ bot.on('message', (message) => {
                             else {
                                 for(msg of messages) {
                                     console.log('--->> your message: ' + msg);
-                                    //msg.reply('new try').then(m => m.delete(1000));
-                                    msg.delete(1);
+                                    msg.reply('new try').then(m => m.delete(1000));
+                                    //msg.delete(1);
                                 }
                             }
                         });
