@@ -47,7 +47,7 @@ bot.on('message', (message) => {
                     else {
                         console.log('This is direct chat! ! ! !')
                         message.channel.fetchMessages()
-                            .then(messages1 => {
+                            .then((messages1) => {
                                 //message.channel.bulkDelete(list);
                                 console.log('messages1.length: ' + messages1.length);
                                 for(msg of messages1) {
