@@ -37,11 +37,11 @@ bot.on('message', (message) => {
                       //console.log('bulk: ' + message.channel.bulkDelete + ', ' + bot.sweepMessages);
                       let x = bot.sweepMessages(1);
                       console.log('deleted!!! -> ' + x);
-                      /*
+                    
                     message.channel.bulkDelete(100).then(() => {
                         message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                     });
-                    */
+                    
                     message.channel.fetchMessages()
                         .then(messages => {
                             //message.channel.bulkDelete(list);
@@ -49,7 +49,7 @@ bot.on('message', (message) => {
                                 console.log('--->> your message: ' + msg);
                                 msg.delete(100);
                             }
-                            message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
+                            //message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                         }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
                     
                 //}
