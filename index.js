@@ -43,16 +43,17 @@ bot.on('message', (message) => {
                             message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                         });
                     }
-                    
-                    message.author.fetchMessages()
-                        .then(messages => {
-                            //message.channel.bulkDelete(list);
-                            for(msg of messages) {
-                                console.log('--->> your message: ' + msg);
-                                msg.delete(100);
-                            }
-                            //message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
-                        }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
+                    else {
+                        message.author.fetchMessages()
+                            .then(messages => {
+                                //message.channel.bulkDelete(list);
+                                for(msg of messages) {
+                                    console.log('--->> your message: ' + msg);
+                                    msg.delete(100);
+                                }
+                                //message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
+                            }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
+                    }
                     
                 //}
                 //messages = [];
