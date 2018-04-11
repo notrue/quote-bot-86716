@@ -14,7 +14,7 @@ server.listen(port); //the server object listens on port 8080
 //heroku config:set PORT=3000
 
 
-//const Discord = require('discord.js');
+const Discord = require('discord.js');
 let bot = new Discord.Client();
 
 var messages = [];
