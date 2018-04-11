@@ -42,7 +42,7 @@ bot.on('message', (message) => {
                     message.channel.fetchMessages()
                         .then((messages) => {
                         /*works ONLY inside channel !!!! not direct chat*/message.channel.bulkDelete(messages.size).then(() => {
-                            message.channel.send("Purged 3 messages.").then(m => m.delete(3000));
+                            message.channel.send("Purged " + messages.size + " messages.").then(m => m.delete(3000));
                         });
                     });
 
