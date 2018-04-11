@@ -15,7 +15,7 @@ server.listen(port); //the server object listens on port 8080
 
 
 const Discord = require('discord.js');
-let bot = new Discord.Client();
+const bot = new Discord.Client();
 
 var messages = [];
 bot.on('message', (message) => {
@@ -69,8 +69,8 @@ bot.on('message', (message) => {
 
  
 function clear() {
-    console.log('client:' + this.bot.deleteMessages);
-    this.bot.sweepMessages(100);
+    console.log('client:' + bot.deleteMessages);
+    bot.sweepMessages(100);
     messages = [];
 }
 
