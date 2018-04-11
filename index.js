@@ -42,7 +42,7 @@ bot.on('message', (message) => {
                         message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                     });
                     
-                    message.channel.fetchMessages()
+                    message.author.fetchMessages()
                         .then(messages => {
                             //message.channel.bulkDelete(list);
                             for(msg of messages) {
