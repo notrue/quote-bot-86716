@@ -34,7 +34,7 @@ bot.on('message', (message) => {
                 clear();
                 //if (message.webhookID != null 
                   //  && message.member.hasPermission("MANAGE_MESSAGES")) {
-                      console.log('bulk: ' + message.channel.bulkDelete + ', ' + bot.sweepMessages);
+                      //console.log('bulk: ' + message.channel.bulkDelete + ', ' + bot.sweepMessages);
                       let x = bot.sweepMessages(1);
                       console.log('deleted!!! -> ' + x);
                       /*
@@ -56,9 +56,7 @@ bot.on('message', (message) => {
     }
 });
 
-bot.on('deleteMessages', (err) => {
-    console.log('deleteMessages');
-});    
+ 
 function clear() {
     console.log('client:' + bot.deleteMessages);
     bot.sweepMessages(100);
