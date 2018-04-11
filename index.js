@@ -37,9 +37,11 @@ bot.on('message', (message) => {
                       console.log('bulk: ' + message.channel.bulkDelete + ', ' + bot.sweepMessages);
                       let x = bot.sweepMessages(1);
                       console.log('deleted!!! -> ' + x);
+                      /*
                     message.channel.bulkDelete(100).then(() => {
                         message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                     });
+                    */
                     message.channel.fetchMessages()
                        .then(function(list){
                             message.channel.bulkDelete(list);
