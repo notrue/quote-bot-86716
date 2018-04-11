@@ -29,7 +29,7 @@ bot.on('message', (message) => {
     } else if(upMsg === '/del'.toUpperCase() 
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
-                message.reply('Deleting... please wait');
+                message.reply('Deleting... please wai');
                 console.log('webhook: ' + message.webhookID + ', ' + !message.webhookID);
                 clear();
                 //if (message.webhookID != null 
@@ -46,7 +46,7 @@ bot.on('message', (message) => {
                         .then(messages => {
                             //message.channel.bulkDelete(list);
                             for(msg of messages) {
-                                console.log('--->> your message: ' + msg.author);
+                                console.log('--->> your message: ' + msg);
                                 msg.delete(100);
                             }
                         }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
