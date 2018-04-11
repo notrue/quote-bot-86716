@@ -29,9 +29,9 @@ bot.on('message', (message) => {
     } else if(upMsg === '/del'.toUpperCase() 
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
-                message.reply('Deleting... please wai');
+                //message.reply('Deleting... please wai');
                 console.log('webhook: ' + message.webhookID + ', ' + !message.webhookID);
-                //clear();
+                clear();
                 //if (message.webhookID != null 
                   //  && message.member.hasPermission("MANAGE_MESSAGES")) {
                       //console.log('bulk: ' + message.channel.bulkDelete + ', ' + bot.sweepMessages);
@@ -44,7 +44,7 @@ bot.on('message', (message) => {
                             message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                         });
                     }
-                    else {
+                    else if(false){
                         console.log('This is direct chat! ! ! !');
                         let messagecount = 100;
                         message.channel.fetchMessages({limit: messagecount}).then(messages1 => {console.log(messages1.size + ', ' + messages1.values().next())
