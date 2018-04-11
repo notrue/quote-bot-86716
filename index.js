@@ -46,6 +46,7 @@ bot.on('message', (message) => {
                     }
                     else {
                         console.log('This is direct chat! ! ! !');
+                        let messagecount = 100;
                         message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
                         /*
                         message.channel.fetchMessages()
