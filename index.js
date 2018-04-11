@@ -26,7 +26,7 @@ bot.on('message', (message) => {
     console.log(upMsg);
     if(upMsg === 'ping'.toUpperCase()
         || upMsg === 'פינג'.toUpperCase()) {
-        message.reply(message.author + ' said: Mor shalom _\"' + message.content + '\"_,\n qUote-bot answered: _\"pong\"_')
+        message.reply(message.author + ' said:  _\"' + message.content + '\"_,\n qUote-bot answered: _\"pong\"_')
     } else if(upMsg === '/del'.toUpperCase() 
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
@@ -42,10 +42,20 @@ bot.on('message', (message) => {
 
                     message.channel.fetchMessages()
                         .then((messages) => {
-                        /*works ONLY inside channel !!!! not direct chat*/message.channel.bulkDelete(messages.size).then(() => {
-                            message.channel.send("Purged " + messages.size + " messages.").then(m => m.delete(3000));
+                            if(message.webhookID) {
+                                console.log('This is Webhook!!')
+                                /*works ONLY inside channel !!!! not direct chat*/message.channel.bulkDelete(messages.size).then(() => {
+                                    message.channel.send("Purged " + messages.size + " messages.").then(m => m.delete(3000));
+                                });
+                            }
+                            else {
+                                for(msg of messages1) {
+                                    console.log('--->> your message: ' + msg);
+                                    //msg.reply('new try').then(m => m.delete(1000));
+                                    msg.delete(1);
+                                }
+                            }
                         });
-                    });
 
 
 
