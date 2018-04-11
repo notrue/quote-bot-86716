@@ -39,11 +39,13 @@ bot.on('message', (message) => {
                       console.log('deleted!!! -> ' + x);
                     
                     if(message.webhookID) {
+                        console.log('This is Webhook!!')
                         message.channel.bulkDelete(100).then(() => {
                             message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                         });
                     }
                     else {
+                        console.log('This is direct chat! ! ! !')
                         message.channel.fetchMessages()
                             .then(messages => {
                                 //message.channel.bulkDelete(list);
