@@ -45,7 +45,9 @@ bot.on('message', (message) => {
                         });
                     }
                     else {
-                        console.log('This is direct chat! ! ! !')
+                        console.log('This is direct chat! ! ! !');
+                        message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+                        /*
                         message.channel.fetchMessages()
                             .then((messages1) => {
                                 //message.channel.bulkDelete(list);
@@ -56,6 +58,7 @@ bot.on('message', (message) => {
                                 }
                                 //message.channel.send("Purged 100 messages.").then(m => m.delete(3000));
                             }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
+                        */
                     }
                     
                 //}
