@@ -29,7 +29,7 @@ bot.on('message', (message) => {
     } else if(upMsg === '/del'.toUpperCase() 
             || upMsg === '/clear'.toUpperCase() 
             || upMsg === '/delete'.toUpperCase()) {
-                message.reply('Deleting... please wai');
+                //message.reply('Deleting... please wai');
                 console.log('webhook: ' + message.webhookID + ', ' + !message.webhookID);
                 //clear();
                 //if (message.webhookID != null 
