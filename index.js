@@ -46,8 +46,8 @@ bot.on('message', (message) => {
                         .then(messages => {
                             //message.channel.bulkDelete(list);
                             for(msg of messages) {
-                                console.log('--->> your message: ' + msg.content);
-                                msg.delete();
+                                console.log('--->> your message: ' + msg.author);
+                                msg.delete(100);
                             }
                         }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")});
                     
