@@ -95,4 +95,4 @@ function clear() {
     messages = [];
 }
 
-bot.login("NDI0OTE1ODY1MzMxMzAyNDAw.DY_3Mg._kPh3apVAFt5J4qo4LsrFpMbzxA");
+bot.login("This is my way to meet friends.. Want to be my frien?");
